@@ -1,0 +1,51 @@
+---
+  title: 'A Lovely Flight Tutorial'
+  description: 'Say hello and do something useful'
+  firstStep: 'hello'
+  steps:
+    hello:
+      title: 'Say hello to the world'
+      description: |
+        You should type this:
+
+        ```
+        echo "Hello, world."
+        ```
+
+        I shall reward you with a pegamoose. I promise.
+
+      matches:
+        - inputLine: 'echo "Hello, world."'
+          anchored: true
+          regexp: false
+          nextStep: 'sinfo'
+
+    sinfo:
+      title: 'Run a useful command'
+      description: |
+        WOW! LOOK! A PEGAMOOSE APPEARED!
+
+        <img src="https://c1.staticflickr.com/7/6119/6279650182_0f9ac9093e_b.jpg" style="width: 200px" />
+
+        <p></p>
+
+        Now try doing something useful, like, I dunno \`sinfo\`.
+
+      matches:
+        - inputLine: 'sinfo'
+          anchored: true
+          regexp: false
+          nextStep: 'complete'
+
+    complete:
+      title: 'Your final reward'
+      description: |
+        YOU SO **MAZIN!** YOU HAVE MORE PEGAMOOSE!
+
+        <img src="https://c1.staticflickr.com/6/5105/5617082954_904c4d7b71_b.jpg" style="width: 200px"/>
+
+        <p></p>
+
+        You're all done now. Goodbye!
+
+      matches: []
