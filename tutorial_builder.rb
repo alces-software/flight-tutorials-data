@@ -51,4 +51,6 @@ class TutorialBuilder
   end
 end
 
-TutorialBuilder.new.run if File.absolute_path($0) == __FILE__
+if $0 == __FILE__ || File.absolute_path($0) == __FILE__
+  TutorialBuilder.new.run 
+end
