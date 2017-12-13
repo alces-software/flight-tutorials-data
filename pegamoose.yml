@@ -1,10 +1,21 @@
 ---
-  title: 'A Lovely Flight Tutorial'
-  description: 'Say hello and do something useful'
-  firstStep: 'hello'
+  # Each tutorial consists of a title, description, an optional logoUrl, and a
+  # set of steps.
+
+  title: A Lovely Flight Tutorial
+  description: Say hello and do something useful
+  logoUrl: https://c1.staticflickr.com/7/6119/6279650182_0f9ac9093e_b.jpg
+
+  # The step that the tutorial starts with.
+  firstStep: hello
+
+  # The set of steps that comprise this tutorial.
+  #
+  # Each step consists of an identifier, a title, a description and a number
+  # of matches.
   steps:
     hello:
-      title: 'Say hello to the world'
+      title: Say hello to the world
       description: |
         You should type this:
 
@@ -14,14 +25,41 @@
 
         I shall reward you with a pegamoose. I promise.
 
+      # The list of matches for this step.
+      #
+      # A match consists of an inputLine, anchored and regexp flags and a
+      # nextStep.
+      #
+      # `inputLine` is the string that will be tested against the input provided
+      # by the user.
+      #
+      # `anchored` is either a boolean or an object with `start` and `end`
+      # boolean attributes.  A value of `true` is equivalent to `{start: true,
+      # end: true}` and a value of `false` is equivalent to `{start: false,
+      # end: false}`.  If `start` is true, `inputLine` will only match if it
+      # is the first non-white space that the user enters.  Similarly for
+      # `end`.
+      #
+      # `regexp` is a boolean.  If true, `inputLine` will be treated as a
+      # regular expression, otherwise, it will be tested as a fixed string,
+      # requiring an exact match.
+      #
+      # `nextStep` is the identifier of the step to progress to if the
+      # inputLine matches.
+      #
+      # Each match will be tested in order.
       matches:
-        - inputLine: 'echo "Hello, world."'
+        - inputLine: echo "Hello, world."
           anchored: true
           regexp: false
-          nextStep: 'sinfo'
+          nextStep: sinfo
+        - inputLine: echo 'Hello, world.'
+          anchored: true
+          regexp: false
+          nextStep: sinfo
 
     sinfo:
-      title: 'Run a useful command'
+      title: Run a useful command
       description: |
         WOW! LOOK! A PEGAMOOSE APPEARED!
 
@@ -32,13 +70,13 @@
         Now try doing something useful, like, I dunno \`sinfo\`.
 
       matches:
-        - inputLine: 'sinfo'
+        - inputLine: sinfo
           anchored: true
           regexp: false
-          nextStep: 'complete'
+          nextStep: complete
 
     complete:
-      title: 'Your final reward'
+      title: Your final reward
       description: |
         YOU SO **MAZIN!** YOU HAVE MORE PEGAMOOSE!
 

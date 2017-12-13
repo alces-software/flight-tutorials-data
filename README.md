@@ -2,6 +2,10 @@
 
 Data files and programs to generate Alces Flight tutorials.
 
+## Writing a tutorial
+
+An annotated example can be found pegamoose.yml
+
 ## Quick start
 
 Install dependencies:
